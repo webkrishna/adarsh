@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आदर्श ज्ञान निकेतन - नामांकन फॉर्म</title>
+    <style>
+        :root {
+            --bg-yellow: #fdf59b;
+            --navy-blue: #003366;
+            --accent-red: #cc0000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #d1d1d1;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .main-card {
+            background-color: var(--bg-yellow);
+            width: 100%;
+            max-width: 650px;
+            border: 8px double var(--navy-blue);
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--navy-blue);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        h1 { color: var(--navy-blue); margin: 5px 0; font-size: 32px; text-shadow: 1px 1px 2px #aaa; }
+        .tagline { background: var(--navy-blue); color: white; padding: 5px 15px; display: inline-block; border-radius: 4px; font-weight: bold; margin-bottom: 5px; }
+        .pattern-text { color: var(--accent-red); font-weight: bold; font-size: 14px; margin-top: 5px; }
+
+        .features {
+            background: #fffbe6;
+            border: 1px dashed var(--navy-blue);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .features h3 { margin-top: 0; color: var(--accent-red); border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        
+        .feature-list { list-style: none; padding: 0; margin: 0; }
+        .feature-list li { margin-bottom: 8px; font-size: 15px; display: flex; align-items: flex-start; }
+        .feature-list li::before { content: "✅"; margin-right: 8px; font-size: 14px; }
+
+        .admission-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--navy-blue);
+        }
+
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; color: var(--navy-blue); margin-bottom: 5px; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 16px; }
+
+        .submit-btn {
+            background-color: #25D366;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .submit-btn:hover { background-color: #128C7E; transform: translateY(-2px); }
+
+        .authorities {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .footer-note { text-align: center; color: var(--accent-red); font-weight: bold; margin-top: 15px; font-size: 16px; }
+
+        #successMessage {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-card">
+    <div class="header">
+        <p style="margin: 0; font-size: 12px;">Reg. No. BEP/SSA/2018-19/262</p>
+        <h1>आदर्श ज्ञान निकेतन</h1>
+        <div class="tagline">ADMISSION OPEN (Pre. Nur. to VIIIth)</div>
+        <div class="pattern-text">An English Medium School Based on CBSE Pattern</div>
+    </div>
+
+    <div class="features">
+        <h3>हमारी व्यवस्थाएँ:-</h3>
+        <ul class="feature-list">
+            <li>शिक्षित एवं अनुभवी शिक्षकों की व्यवस्था।</li>
+            <li>कम्प्युटर एवं SPOKEN के लिए उचित व्यवस्था।</li>
+            <li>CBSE PATTERN पर पढ़ाई की व्यवस्था।</li>
+            <li>स्कूल गाड़ी की सुविधा।</li>
+            <li>खेल-कूद के लिए मैदान की व्यवस्था।</li>
+            <li>BPL एवं मेधावी छात्रों के लिए विशेष छूट।</li>
+            <li>विकलांग एवं कमजोर बच्चों के लिए स्पेशल Class।</li>
+        </ul>
+    </div>
+
+    <div class="admission-form">
+        <form id="studentForm">
+            <div class="form-group">
+                <label for="name">विद्यार्थी का नाम (Name):</label>
+                <input type="text" id="name" placeholder="अपना नाम लिखें" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="class">कक्षा चुनें (Select Class):</label>
+                <select id="class" required>
+                    <option value="" disabled selected>कक्षा चुनें...</option>
+                    <option value="Pre-Nursery">Pre-Nursery</option>
+                    <option value="Nursery">Nursery</option>
+                    <option value="LKG">LKG</option>
+                    <option value="UKG">UKG</option>
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                    <option value="Class 4">Class 4</option>
+                    <option value="Class 5">Class 5</option>
+                    <option value="Class 6">Class 6</option>
+                    <option value="Class 7">Class 7</option>
+                    <option value="Class 8">Class 8</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">घर का पता (Address):</label>
+                <input type="text" id="address" placeholder="गाँव/शहर का नाम" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">मोबाइल नंबर (Mobile No):</label>
+                <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="10 अंकों का नंबर" required>
+            </div>
+
+            <button type="submit" class="submit-btn">नामांकन के लिए WhatsApp करें</button>
+        </form>
+        
+        <div id="successMessage">
+            आवेदन तैयार है! आपको WhatsApp पर भेजा जा रहा है...
+        </div>
+    </div>
+
+    <div class="footer-note">
+        नामांकन चालू है, जल्दी करें स्थान सीमित है!
+    </div>
+
+    <div class="authorities">
+        <div>
+            <b>निदेशक:</b> एम० एल० शर्मा <br>
+            <small>(से०.नि.शिक्षक) प्रोजेक्ट एम.पी.एस. कन्या विद्यालय</small>
+        </div>
+        <div style="text-align: right;">
+            <b>प्राचार्य:</b> रूपेश कुमार <br>
+            <b>मो०:</b> 9801745270, 9005044155
+        </div>
+    </div>
+
+    <p style="text-align: center; font-size: 12px; margin-top: 15px; border-top: 1px solid #ddd; padding-top: 5px;">
+        <i>पता: बस स्टैंड के निकट, दोना, हिसुआ (नवादा)</i>
+    </p>
+</div>
+
+<script>
+    document.getElementById('studentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const studentClass = document.getElementById('class').value;
+        const address = document.getElementById('address').value;
+        const mobile = document.getElementById('mobile').value;
+
+        const message = `*आदर्श ज्ञान निकेतन - नया नामांकन आवेदन*%0A` +
+                        `------------------------------%0A` +
+                        `*नाम:* ${name}%0A` +
+                        `*कक्षा:* ${studentClass}%0A` +
+                        `*पता:* ${address}%0A` +
+                        `*मोबाइल नंबर:* ${mobile}%0A` +
+                        `------------------------------%0A` +
+                        `_कृपया नामांकन की प्रक्रिया आगे बढ़ाएं।_`;
+
+        const phoneNumber = "919005044155"; 
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+        this.style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 1200);
+    });
+</script>
+
+</body>
+</html>
